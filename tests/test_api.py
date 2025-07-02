@@ -1,10 +1,10 @@
 """
 Tests for the Talent Flow API endpoints.
 """
-from fastapi.testclient import TestClient
-import sys
 import os
-import pytest
+import sys
+
+from fastapi.testclient import TestClient
 
 # Add the parent directory to the path to allow importing from app
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -34,15 +34,7 @@ def test_classify_resume_endpoint_validation():
         "academicFormations": []
     }
     response = client.post("/classify-resume/", json=payload)
-    assert response.status_code == 422  # Unprocessable Entity
-
-    # Test with valid minimal payload
-    payload = {
-        "userId": "test_user"
-    }
-    # Note: This test might fail if the model is not properly mocked
-    # In a real test, we would mock the model and preprocessors
-    # For now, we're just testing the validation
+    assert response.status_code == 422
 
 def test_maria_sophia_resume_classification():
     """
@@ -116,16 +108,12 @@ def test_maria_sophia_resume_classification():
     assert response.status_code == 200
     data = response.json()
 
-    # Check that the response contains the expected fields
     assert "userId" in data
     assert "predictedExperienceLevel" in data
     assert "confidenceScore" in data
 
-    # Verify that the userId matches
     assert data["userId"] == payload["userId"]
 
-    # Verify that the predicted experience level is 'Júnior'
     assert data["predictedExperienceLevel"] == "Júnior"
 
-    # Verify that the confidence score is reasonable (greater than 0.5)
-    assert data["confidenceScore"] > 0.5
+    assert data["confidenceScore"] > 0.8

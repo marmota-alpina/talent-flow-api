@@ -40,27 +40,60 @@ def sample_resume_payload():
     Fixture that provides a sample resume payload for testing.
     """
     return {
-        "userId": "test_user",
-        "summary": "Experienced software developer with 5 years in Python and web development.",
-        "professionalExperiences": [
-            {
-                "role": "Senior Developer",
-                "isCurrent": True,
-                "startDate": "2020-01-01",
-                "endDate": None,
-                "activitiesPerformed": [
-                    {
-                        "activity": "Developed RESTful APIs using FastAPI",
-                        "problemSolved": "Improved API performance by 30%",
-                        "technologies": ["Python", "FastAPI", "PostgreSQL"],
-                        "appliedSoftSkills": ["Communication", "Problem Solving"]
-                    }
-                ]
-            }
-        ],
+        "userId": "gen_user_1",
+        "status": "published",
+        "fullName": "Maria Sophia Melo",
+        "email": "maria.sophia.melo@email.com",
+        "phone": "84 3392 5087",
+        "linkedinUrl": "https://linkedin.com/in/mariasophiamelo1",
+        "mainArea": "UI/UX Design",
+        "experienceLevel": "Júnior",
+        "summary": "Júnior em UI/UX Design, com foco em impacto real no negócio e entrega de resultados concretos em projetos relevantes.",
         "academicFormations": [
             {
-                "level": "Bachelor"
+                "level": "Mestrado",
+                "courseName": "Mestrado em UI/UX Design",
+                "institution": "Almeida",
+                "startDate": "2019-06-27",
+                "endDate": "2023-06-26"
+            }
+        ],
+        "languages": [
+            {"language": "Português", "proficiency": "Nativo"},
+            {"language": "Inglês", "proficiency": "Avançado (C1)"}
+        ],
+        "professionalExperiences": [
+            {
+                "experienceType": "CLT",
+                "companyName": "Ribeiro - EI",
+                "role": "Júnior em UI/UX Design",
+                "startDate": "2024-06-25",
+                "endDate": "2025-06-20",
+                "isCurrent": False,
+                "activitiesPerformed": [
+                    {
+                        "activity": "Criei protótipos interativos com base em testes de usabilidade e entrevistas com usuários.",
+                        "problemSolved": "Melhorei a taxa de conversão em 25% ao redesenhar fluxos baseados em testes A/B.",
+                        "technologies": ["UI/UX Design", "Cloud Computing", "Desenvolvimento Backend"],
+                        "appliedSoftSkills": ["Trabalho em equipe", "Pensamento Analítico", "Colaboração"]
+                    }
+                ]
+            },
+            {
+                "experienceType": "CLT",
+                "companyName": "da Rocha S.A.",
+                "role": "Júnior em UI/UX Design",
+                "startDate": "2024-12-22",
+                "endDate": None,
+                "isCurrent": True,
+                "activitiesPerformed": [
+                    {
+                        "activity": "Criei protótipos interativos com base em testes de usabilidade e entrevistas com usuários.",
+                        "problemSolved": "Melhorei a taxa de conversão em 25% ao redesenhar fluxos baseados em testes A/B.",
+                        "technologies": ["Gestão de Produtos", "Análise de Dados", "DevOps"],
+                        "appliedSoftSkills": ["Pensamento Analítico", "Organização", "Resolução de Problemas"]
+                    }
+                ]
             }
         ]
     }

@@ -1,6 +1,7 @@
 import numpy as np
 import hashlib
 import json
+import pandas as pd
 from typing import Dict
 from app.models import ResumePayload
 from app.utils import load_model_artifacts, extract_features_for_prediction
@@ -38,8 +39,15 @@ class ResumeClassifierService:
         mlb_skills = self.artifacts['mlb_skills']
         tfidf = self.artifacts['tfidf_vectorizer']
 
-        num_features = scaler.transform([[features[n] for n in num_order]])
-        edu_features = ohe.transform([[features["highestEducationLevel"]]])
+        # Create a DataFrame with numerical features to preserve feature names
+        num_df = pd.DataFrame([[features[n] for n in num_order]], columns=num_order)
+        num_features = scaler.transform(num_df)
+
+        # Create a DataFrame with education level to preserve feature names
+        edu_df = pd.DataFrame([[features["highestEducationLevel"]]], columns=['highestEducationLevel'])
+        edu_features = ohe.transform(edu_df)
+
+        # These don't need DataFrames as they don't use feature names
         tech_features = mlb_tech.transform([features["technologies"]])
         skills_features = mlb_skills.transform([features["softSkills"]])
         text_features = tfidf.transform([features["fullText"]]).toarray()
@@ -72,4 +80,3 @@ class ResumeClassifierService:
         converted = convert(raw)
         resume_json = json.dumps(converted, sort_keys=True)
         return hashlib.sha256(resume_json.encode("utf-8")).hexdigest()
-
