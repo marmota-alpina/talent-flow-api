@@ -1,6 +1,6 @@
 # Talent Flow API
 
-[![Status dos Testes](https://github.com/marmota-alpina/talent-flow-api/actions/workflows/python-tests.yml/badge.svg)](https://github.com/marmota-alpina/talent-flow-api/actions/workflows/python-tests.yml)
+[![Status dos Testes](https://github.com/marmota-alpina/talent-flow-api/actions/workflows/python-tests.yml/badge.svg?branch=main)](https://github.com/marmota-alpina/talent-flow-api/actions/workflows/python-tests.yml)
 
 API para classificação de currículos por nível de experiência.
 
