@@ -13,7 +13,7 @@ API para classificação de currículos por nível de experiência.
 - imbalanced-learn 0.13.0 (para lidar com conjuntos de dados desbalanceados)
 
 ## Notebook do Projeto
-- https://colab.research.google.com/drive/1--ZdRDPTdV5oIvXLydJBBHSfD4jcovPc#scrollTo=HrKEp6g_bySt
+- https://colab.research.google.com/drive/1--ZdRDPTdV5oIvXLydJBBHSfD4jcovPc?usp=sharing
 ## Instalação
 
 ```bash
