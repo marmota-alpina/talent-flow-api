@@ -12,6 +12,8 @@ API para classificação de currículos por nível de experiência.
 - scikit-learn 1.6.1 (versão específica necessária para compatibilidade com arquivos pickle)
 - imbalanced-learn 0.13.0 (para lidar com conjuntos de dados desbalanceados)
 
+## Notebook do Projeto
+- https://colab.research.google.com/drive/1--ZdRDPTdV5oIvXLydJBBHSfD4jcovPc#scrollTo=HrKEp6g_bySt
 ## Instalação
 
 ```bash
